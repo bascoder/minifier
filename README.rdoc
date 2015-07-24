@@ -1,0 +1,27 @@
+## Minifier.rb ##
+
+This is a small helper ruby script to minify multiple JavaScript files in a directory.
+
+Usage
+-----
+
+    ruby minifier.rb "target/path"
+
+Dependencies
+------------
+
+ 1. [UglifyJS 2][1]
+ 2. [MiniTest][2] (for tests)
+ 3. [MiniTest Reporters][3] (for tests)
+
+Test
+-------
+
+Run the following command:
+
+    ruby minify_test.rb
+
+
+  [1]: https://github.com/mishoo/UglifyJS2
+  [2]: https://rubygems.org/gems/minitest/versions/5.7.0
+  [3]: https://github.com/kern/minitest-reporters
