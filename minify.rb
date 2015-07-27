@@ -64,7 +64,6 @@ Dir[pattern].each do |file|
         # check if command succeeded
         if $?.success?
           success_count += 1
-
           puts 'Successfully minified ' + file
         else
           puts $?
@@ -81,6 +80,9 @@ end
 pids.each { |pid|
   puts "Wait for PID #{pid}"
   Process.wait pid
+
+  # count success or fail
+  !$?.nil? and $?.success? ? success_count += 1 : fail_count += 1
 }
 
 puts "Processed #{js_count} files, #{success_count} successes and #{fail_count} failures"
