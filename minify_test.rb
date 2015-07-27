@@ -31,6 +31,10 @@ class MyTest < MiniTest::Unit::TestCase
     # command should exit successfully
     assert $?.success?
 
+    assert_minified
+  end
+
+  def assert_minified
     files = Dir.entries(@dir)
     assert files.include? 'another.min.js'
     assert files.include? 'another.min.map'
@@ -46,5 +50,12 @@ class MyTest < MiniTest::Unit::TestCase
     system MINIFY_SCRIPT
 
     assert !$?.success?
+  end
+
+  def test_concurrent
+    system @command + ' t'
+
+    assert($?.success?, 'command should complete')
+    assert_minified
   end
 end
