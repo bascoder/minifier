@@ -1,10 +1,14 @@
 =Minifier.rb
 
-This is a small helper ruby script to minify multiple JavaScript files in a directory.
+This is a small helper ruby script to minify multiple JavaScript files in a directory using UglifyJS2.
 
 ==Usage
 
     ruby minifier.rb "target/path"
+    
+or async mode
+
+    ruby minifier.rb "target/path" t
 
 ==Dependencies
 
